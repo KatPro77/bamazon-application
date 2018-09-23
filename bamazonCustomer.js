@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
     port: 3306,
     user: "root",
     password: "",
-    database: "bamazonDB"
+    database: "bamazon"
 });
 
 connection.connect(err => {
@@ -28,6 +28,7 @@ const loadProducts = () => {
 
 
         console.table(res);
+        promptCustomerForItem(res);
     });
 
     const promptCustomerForItem = inventory => {
@@ -111,8 +112,5 @@ const loadProducts = () => {
             }
         );
     }
-
-
-
 }
 
